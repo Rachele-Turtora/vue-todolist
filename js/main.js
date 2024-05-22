@@ -34,10 +34,12 @@ const { createApp } = Vue
         },
 
         addTask(){
-            this.todo.push({
-                text: this.newTask,
-                done: false
-            });
+            if (this.newTask.length){
+                this.todo.push({
+                    text: this.newTask,
+                    done: false
+                });
+            }
             this.newTask = "";
         },
         
