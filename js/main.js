@@ -42,7 +42,7 @@ const { createApp } = Vue
         },
         
         done(index){
-            this.todo[index].done = !this.todo[index].done
+            this.todo[index].done = !this.todo[index].done;
         }
     }
   }).mount('#app')
