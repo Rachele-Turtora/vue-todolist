@@ -15,8 +15,8 @@
 
                 <div class="list">
                     <ul>
-                        <li v-for="element in todo" :class="{line: element.done}">
-                            <div class="bullet cross">&cross;</div>
+                        <li v-for="(element, i) in todo" :class="{line: element.done}">
+                            <div class="bullet" @click="remove(i)">&cross;</div>
                             <span> {{ element.text }}</span>
                         </li>
                     </ul>
