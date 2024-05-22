@@ -24,12 +24,21 @@ const { createApp } = Vue
                 text: "Summit update to mobile storefronts",
                 done: false
             }
-        ]
+        ],
+        newTask: ""
       }
     },
     methods: {
-        remove(index){
+        removeTask(index){
             this.todo.splice(index, 1);
+        },
+
+        addTask(){
+            this.todo.push({
+                text: this.newTask,
+                done: false
+            });
+            this.newTask = "";
         }
     }
   }).mount('#app')

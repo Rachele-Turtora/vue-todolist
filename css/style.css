@@ -84,3 +84,8 @@ li{
 span{
     margin-left: 10px;
 }
+
+input{
+    padding: 10px;
+    margin: 20px 0 10px 30px;
+}

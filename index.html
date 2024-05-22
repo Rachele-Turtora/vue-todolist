@@ -16,12 +16,13 @@
                 <div class="list">
                     <ul>
                         <li v-for="(element, i) in todo" :class="{line: element.done}">
-                            <div class="bullet" @click="remove(i)">&cross;</div>
+                            <div class="bullet" @click="removeTask(i)">&cross;</div>
                             <span> {{ element.text }}</span>
                         </li>
                     </ul>
                 </div>
-                <button class="task">Add Task</button>
+                <input type="text" v-model="newTask">
+                <button class="task" @click="addTask()">Add Task</button>
             </div>
         </main>
     </div>
