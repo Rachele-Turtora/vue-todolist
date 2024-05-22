@@ -39,6 +39,10 @@ const { createApp } = Vue
                 done: false
             });
             this.newTask = "";
+        },
+        
+        done(index){
+            this.todo[index].done = !this.todo[index].done
         }
     }
   }).mount('#app')

@@ -17,7 +17,7 @@
                     <ul>
                         <li v-for="(element, i) in todo" :class="{line: element.done}">
                             <div class="bullet" @click="removeTask(i)">&cross;</div>
-                            <span> {{ element.text }}</span>
+                            <span @click="done(i)"> {{ element.text }}</span>
                         </li>
                     </ul>
                 </div>
