@@ -13,15 +13,23 @@
             <div class="container">
                 <h1>To Do List</h1>
 
+                <input type="text" v-model="findTask">
+
                 <div class="list">
                     <ul>
-                        <li v-for="(element, i) in todo" :class="{line: element.done}">
+                        <li v-for="(task, i) in searchTask()" 
+                        :key="`task-${i}`" 
+                        :class="{line: task.done}">
                             <div class="bullet" @click="removeTask(i)">&cross;</div>
-                            <span @click="done(i)"> {{ element.text }}</span>
+                            <span @click="toggle(i)"> {{ task.text }}</span>
                         </li>
                     </ul>
                 </div>
-                <input type="text" v-model="newTask" @keyup.enter="addTask">
+                <label for="input-task"></label>
+                <input type="text" 
+                id="input-task" 
+                v-model="newTask" 
+                @keyup.enter="addTask">
                 <button class="task" @click="addTask()">Add Task</button>
             </div>
         </main>
